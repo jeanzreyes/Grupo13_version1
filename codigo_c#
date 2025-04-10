@@ -1,8 +1,12 @@
-int n1, n2, suma;
+int n1, n2,n4, suma,multi;
 Console.Write("INGRESE NUMERO 1: ");
 n1=int.Parse(Console.ReadLine());
 Console.Write("INGRESE NUMERO 2: ");
 n2 = int.Parse(Console.ReadLine());
+Console.Write("INGRESE NUMERO 4: ");
+n4 = int.Parse(Console.ReadLine());
 suma = n1 + n2;
+multi=n1*n4;
 Console.Write("LA SUMA ES: "+suma);
+Console.Write("LA MULTI ES: "+multi);
 Console.ReadKey();
