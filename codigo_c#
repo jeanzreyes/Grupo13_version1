@@ -1,0 +1,8 @@
+int n1, n2, suma;
+Console.Write("INGRESE NUMERO 1: ");
+n1=int.Parse(Console.ReadLine());
+Console.Write("INGRESE NUMERO 2: ");
+n2 = int.Parse(Console.ReadLine());
+suma = n1 + n2;
+Console.Write("LA SUMA ES: "+suma);
+Console.ReadKey();
