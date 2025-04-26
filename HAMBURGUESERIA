@@ -1,3 +1,119 @@
-
- int n1, n2, n3, precio;
- double descuento, total;
+int n1, n2, n3, precio;
+double descuento, total;
+public ProgMenu() { } 
+static void Main(string[] args)
+{
+    ProgMenu objProgMenu;
+    objProgMenu = new ProgMenu();
+    objProgMenu.mostrarMenu();
+    objProgMenu.elegirMenu();
+    objProgMenu.elegirTipo();
+    objProgMenu.descuentoMenu();
+    objProgMenu.totalMenu();
+}
+public void mostrarMenu()
+{
+    Console.WriteLine("********MENU********(M)");
+    Console.WriteLine();
+    Console.WriteLine("*****INDIVIDUAL*****(1)");
+    Console.WriteLine("*******COMBO********(2)**DESCUENTO DEL 20% SOLO POR HOY");
+    Console.WriteLine();
+}
+public void elegirMenu() 
+{
+    Console.Write("SELECCIONA TU PEDIDO: ");
+    n1=int.Parse(Console.ReadLine());
+    if (n1!=1 && n1!=2) 
+    {
+        Console.Clear();
+        mostrarMenu();
+        elegirMenu();
+    }
+    Console.WriteLine();
+}
+public void elegirTipo()
+{
+    if (n1==1)
+    {
+        Console.WriteLine("****HAMBURGUESA DE CARNE*** S/ 10 (1)");
+        Console.WriteLine("****HAMBURGUESA DE POLLO*** S/ 12 (2)");
+        Console.WriteLine("***HAMBURGUESA DE CHORIZO** S/ 14 (3)");
+        Console.WriteLine();
+        Console.Write("SELECCIONA TU HAMBUERGUESA: ");
+        n2 = int.Parse(Console.ReadLine());
+        if (n2 != 1 && n2 != 2 && n2!=3)
+        {
+            Console.Clear() ;
+            mostrarMenu();
+            elegirTipo();
+        }
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine("****COMBO HAMBURGUESA DE CARNE*** S/ 18 (1)");
+        Console.WriteLine("****COMBO HAMBURGUESA DE POLLO*** S/ 20 (2)");
+        Console.WriteLine("***COMBO HAMBURGUESA DE CHORIZO** S/ 22 (3)");
+        Console.WriteLine();
+        Console.Write("SELECCIONA TU COMBO: ");
+        n3 = int.Parse(Console.ReadLine());
+        if (n3 != 1 && n3 != 2 && n3 != 3)
+        {
+            Console.Clear();
+            mostrarMenu();
+            elegirTipo();
+        }
+        Console.WriteLine();
+    }
+}
+public void descuentoMenu()
+{
+    //INDIVIDUAL
+    switch (n2)
+    {
+        case 1:
+            total = 10;
+            break;
+        case 2:
+            total = 12;
+            break;
+        case 3:
+            total = 14;
+            break;
+        default:
+            total = 0;
+            break;
+    }
+    //COMBO
+    switch (n3)
+    {
+        case 1:  
+            precio= 18;
+            descuento = precio * 0.2;
+            total = precio - descuento;
+            Console.WriteLine("TIENE UN DESCUENTO DE: S/" + descuento);
+            break;
+        case 2:
+            precio = 20;
+            descuento = precio * 0.2;
+            total = precio - descuento;
+            Console.WriteLine("TIENE UN DESCUENTO DE: S/" + descuento);
+            break;
+        case 3:
+            precio = 22;
+            descuento = precio * 0.2;
+            total = precio - descuento;
+            Console.WriteLine("TIENE UN DESCUENTO DE: S/" + descuento);
+            break;
+        default: 
+            precio = 0;
+            break;
+    }
+}
+public void totalMenu()
+{
+    Console.WriteLine("TOTAL A PAGAR ES: S/" + total);
+    Console.WriteLine();
+    Console.Write(":)GRACIAS POR SU COMPRA:)");
+    Console.ReadKey();
+}
